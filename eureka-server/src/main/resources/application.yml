@@ -1,8 +1,8 @@
 server:
-  port: 8761
+  port: 1111
 security:
   basic:
-    enabled: true #开启认证
+    enabled: false #开启认证
   user:
     name: admin
     password: admin
@@ -11,4 +11,5 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://user:password@localhost:8761/eureka
+      #defaultZone: http://user:password@localhost:${server.port}/eureka
+      defaultZone: http://localhost:${server.port}/eureka

@@ -1,0 +1,19 @@
+server:
+  port: 2222
+
+#配置服务注册地址
+eurekaserver:
+    port: 1111
+    ip: localhost
+    user:
+        name: admin
+        password: admin
+
+spring:
+   application:
+        name: compute-service
+eureka:
+  client:
+    service-url:
+        #defaultZone: http://${eurekaserver.user.name}:${eurekaserver.user.password}@${eurekaserver.ip}:${eurekaserver.port}/eureka
+        defaultZone: http://${eurekaserver.ip}:${eurekaserver.port}/eureka
